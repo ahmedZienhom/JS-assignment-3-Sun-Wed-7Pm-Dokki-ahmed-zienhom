@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bookmark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/all.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body>
+    <main class="py-5">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <h1 class="py-2 position-relative ">Bookmarker</h1>
+                <div class="mt-5 px-3 py-4 w-100 gap-4 dotted d-flex flex-column justify-content-center align-items-center">
+                    <h2><span class="fa-solid fa-bookmark"></span> Bookmark your favorite sites <span class="fa-solid fa-bookmark"></span></h2>
+                    <div class="d-flex flex-column align-content-center form-floating w-100 position-relative">
+                        <input oninput="checkIt(this)" type="text" id="siteName" class="form-control" placeholder="" name="site-name"/>
+                        <label for="siteName" class="text-capitalize "><span class="fa-solid fa-book-bookmark"></span> site name</label>
+                    </div>
+                    <div class="d-flex flex-column align-content-center  form-floating w-100 position-relative">
+                        <input oninput="checkIt(this)" type="text" id="siteURL" class="form-control" placeholder="" name="site-name"/>
+                        <label for="siteURL" class="text-capitalize "><span class="fa-solid fa-link"></span> site uRL</label>
+                    </div>
+                    <button class="btn btn-submit px-5 text-capitalize" id="submitBTN" onclick="submit()">submit</button>
+
+                </div>
+                <table class="table bg-white text-center mt-4">
+                    <thead>
+                        <tr class="text-capitalize">
+                            <th>index</th>
+                            <th>webSite name</th>
+                            <th>visit</th>
+                            <th>delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sites" class="text-capitalize no-margin">
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>castle</td>
+                                <td>
+                                    <button class="btn btn-visit text-capitalize"><a href="#" target="_blank"><span class="fa fa-eye pe-2"></span>visit</a></button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-delete text-capitalize"><span class="fa-solid fa-trash-alt pe-2"></span>delete</button>
+                                </td>
+                            </tr> -->
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </main>
+    <div id="popUp" class="position-absolute top-0 bottom-0 start-0 end-0 bg-black z-2 bg-opacity-50 d-none align-items-center justify-content-center">
+        <div class="shadow-lg rounded-2 bg-white p-4 w-500">
+            <div class="w-100 d-flex align-items-center justify-content-between mb-4">
+                <div class="d-flex circles">
+                    <span class="rounded-circle me-2 bg-danger"></span>
+                    <span class="rounded-circle me-2 bg-warning"></span>
+                    <span class="rounded-circle me-2 bg-success"></span>
+                </div>
+                <button onclick="closeIt()" class="btn border-0"><span class="fa fs-3 fa-xmark"></span></button>
+            </div>
+            <p class="m-0 pb-2 my-paragraph text-capitalize">Site Name or Url is not valid, Please follow the rules below :</p>
+            <ul class="list-unstyled m-0 rules">
+                <li><span class="fa-regular fa-circle-right text-danger p-2"></span>Site name must contain at least 3 characters</li>
+                <li><span class="fa-regular fa-circle-right text-danger p-2"></span>Site URL must be a valid one</li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
